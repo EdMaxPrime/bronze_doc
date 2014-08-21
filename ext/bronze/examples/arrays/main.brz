@@ -1,0 +1,22 @@
+Bronze.setPackage(this, new Package("ext.bronze.examples.arrays"));
+
+class Animal {
+    this.name;
+}
+
+class Cat extends Animal {
+    
+    public Cat(name) {
+        this.name = name;
+    }
+    
+    public sayHi() {
+        Bronze.console.log(this.name + " says meow!");
+    }
+}
+
+class Lion extends Cat {
+
+}
+
+var animals = new Array();
