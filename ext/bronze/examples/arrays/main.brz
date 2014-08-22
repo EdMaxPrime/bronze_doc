@@ -1,7 +1,12 @@
 Bronze.setPackage(this, new Package("ext.bronze.examples.arrays"));
+Bronze.useExtension(ext.bronze.plugins.keywords);
 
 class Animal {
-    this.name;
+    this.name.__bronze.lock(0, "children-Animal", String);
+    
+    public Animal(String name) {
+        this.name = name;
+    }
 }
 
 class Cat extends Animal {
@@ -16,7 +21,16 @@ class Cat extends Animal {
 }
 
 class Lion extends Cat {
-
+    
+    public sayHi() {
+        Bronze.console.log(this.name + " says roar!");
+    }
 }
 
-var animals = new Array();
+var animals = new Array(new Cat("Happy"), new Cat("Meowers"), new Cat("Jumper"), new Cat("Betsy"), new Cat("Alice"));
+var atZoo = new Array(animals[0], new Array(animals[2], animals[4]));
+var exhibitA = new Array(atZoo[0]);
+
+function main(args) {
+    Bronze.console.log(exhibitA.trace(0, 2)); //logs "animals ==> atZoo ==> exhibitA"
+}
