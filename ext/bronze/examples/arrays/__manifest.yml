@@ -1,0 +1,14 @@
+this:
+  manifest:
+    version: 0.05
+    type: "text/bronze"
+  
+  bronze:
+    main_path: "Main.main"
+    main_classPath: "ext.bronze.examples.arrays.Main.main"
+    plugins:
+      - "ext.bronze.plugins.keywords"
+    application :
+      type : "application"
+      version : 1.0
+    version : "Bronze 0.05"
